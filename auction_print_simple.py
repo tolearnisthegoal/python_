@@ -14,8 +14,8 @@ filler_2 = ')'
 
 print(item)
 
-print('Bid starts at: ', end=' ')
-print(amount, '\n')
+print('Bid starts at: ', amount)
+
 
 print(first, '(',amount_1, ') ', second, '(',amount_2, ') ', third, '(',amount_3, ')', sep='')
 
