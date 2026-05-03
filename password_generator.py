@@ -16,7 +16,7 @@ password = letter + number + symbol
 random.shuffle(password)
 password_formated = ''
 for i in password:
-    password_formated = i + password_formated
+    password_formated = password_formated + i
 
 print(password_formated)
 
