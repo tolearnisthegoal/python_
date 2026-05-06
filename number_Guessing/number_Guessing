@@ -1,0 +1,44 @@
+import random
+
+art = r''' _______               ___.                    ________                            .__                
+ \      \  __ __  _____\_ |__   ___________   /  _____/ __ __   ____   ______ _____|__| ____    ____  
+ /   |   \|  |  \/     \| __ \_/ __ \_  __ \ /   \  ___|  |  \_/ __ \ /  ___//  ___/  |/    \  / ___\ 
+/    |    \  |  /  Y Y  \ \_\ \  ___/|  | \/ \    \_\  \  |  /\  ___/ \___ \ \___ \|  |   |  \/ /_/  >
+\____|__  /____/|__|_|  /___  /\___  >__|     \______  /____/  \___  >____  >____  >__|___|  /\___  / 
+        \/            \/    \/     \/                \/            \/     \/     \/        \//_____/                                                                                                        
+                                                                                                      '''
+
+
+print(art)
+computer_choice  = random.randint(1,100)
+
+attempts = 0
+
+def main_func(attempts):
+    while attempts != 0:
+        guess = int(input('Enter your guess:   '))
+        attempts -= 1
+        if guess < computer_choice:
+            print('Your guess is too low')
+            print(f'You have {attempts} attempts remaining to guess the number')
+        if guess > computer_choice:
+            print('Your guess is too high')
+            print(f'You have {attempts} attempts remaining to guess the number')
+        if guess == computer_choice:
+            print('You guessed correctly')
+            break
+        if attempts == 0:
+            print('You ran out of attempts')
+            print(f'Correct number is {computer_choice}')
+            break
+
+print('Welcome to the Number Guessing Game!')
+print('I\'m thinking of a number between 1 and 100.')
+user_choice = input('Choose a difficulty. Type \'easy\' or \'hard\' :   ').lower()
+if user_choice == 'easy':
+    attempts = 10
+    main_func(attempts)
+if user_choice == 'hard':
+    attempts = 5
+    main_func(attempts)
+
